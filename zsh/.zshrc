@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/htoopyae/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -104,11 +104,11 @@ export NVM_DIR="$HOME/.nvm"
 
 export PATH=$PATH:/usr/local/Cellar/mongodb-community/4.2.0/bin
 
-export PATH="$PATH:/Users/htoopyae/flutter/flutter/bin"
+export PATH="$PATH:$HOME/flutter/flutter/bin"
 
 # sonarqube static code analysis tool
-export PATH="$PATH:/Users/htoopyae/Applications/SonarQube/bin"
-export PATH="$PATH:/Users/htoopyae/Applications/SonarScanner/bin"
+export PATH="$PATH:$HOME/Applications/SonarQube/bin"
+export PATH="$PATH:$HOME/Applications/SonarScanner/bin"
 
 export GOPATH=$HOME/go
 
