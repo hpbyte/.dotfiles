@@ -7,3 +7,5 @@
 	hist = log --pretty=oneline --graph --decorate
 [init]
 	defaultBranch = main
+[core]
+	editor = vim
