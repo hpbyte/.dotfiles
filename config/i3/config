@@ -8,101 +8,42 @@ set $mod Mod4
 # Mine: disable title bar
 font pango:monospace 0
 
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-# font pango:Fira Code 16
-
-# start a terminal. We use kitty.
+# -- Key Bindings ---------------------------------------
+#
+# Terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
+# Windows
+#
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # -- Rofi ---------------------------------------
-# start dmenu (a program launcher).
-# bindsym $mod+d exec --no-startup-id dmenu_run
 #
-# A more modern dmenu replacement is rofi:
-# You have 2 options to launch rofi:
-# This mode search for .desktop files in /usr/share/applications.
-# This is the recommended mode. It searches for the programs as
-# defined in .desktop file, with their description, and corresponding
-# icons
-# bindsym $mod+d exec --no-startup-id rofi -show drun -theme Monokai -icon-theme "Tela-circle" -show-icons
+# Launcher
 bindsym $mod+d exec --no-startup-id ~/.config/rofi/bin/launcher
 
-# power menu
+# Power menu
 bindsym $mod+z exec --no-startup-id ~/.config/rofi/bin/powermenu
-
-# The other mode search for applications in /usr/bin or /usr/sbin.
-# This should only be used if a program lacks a .desktop file.
-bindsym $mod+Shift+d exec --no-startup-id rofi -show run -theme Monokai
-
-# Launch Polybar. Take a look at ~/.confi/polybar/config to
-# configure the bar.
-exec_always --no-startup-id $HOME/.config/polybar/forest/launch.sh
-
-# Display Wallpaper, always.
-# exec_always feh --bg-fill /usr/share/backgrounds/i3/wall.png
-exec_always feh --bg-fill ~/.config/i3/wallpapers/redbull-f1.jpg
-
-# Provide Gaps to Windows. Increase/Decrease as you like.
-gaps inner 10
-
-#Compositor. This helps in transparency and fading.
-exec_always picom -f
+#
+# -----------------------------------------------
 
 # Lock Screen This will yield a black lock screen, which
 # can be customized to your liking.
 bindsym $mod+x exec betterlockscreen -l
 
-# Shutdown the computer
-#bindsym $mod+Shift+s exec shutdown now
-
-#Reboot Machine
-#bindsym $mod+r exec systemctl reboot
-
-# Suspend the system to RAM (needs swap space)
-#bindsym $mod+s exec systemctl suspend
-
-# The combination of xss-lock, nm-applet and pactl is a popular choice, so
-# they are included here as an example. Modify as you see fit.
-
-# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
-# screen before suspend. Use loginctl lock-session to lock your screen.
-
-# The 4 lines of text above come from i3 documentation. Waking up from a suspended
-# system will launch betterlockscreen
-exec --no-startup-id xss-lock --transfer-sleep-lock -- betterlockscreen -l --nofork
-
-# NetworkManager is the most popular way to manage wireless networks on Linux,
-# and nm-applet is a desktop environment-independent system tray GUI for it.
-# We use this. System dark theme is applied to it.
-# exec --no-startup-id nm-applet
-
-# Use pactl to adjust volume in PulseAudio.
-# These are examples if you would like to use pactl. We will not use this,
-# but rather alsamixer.
-#set $refresh_i3status killall -SIGUSR1 i3status
-#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-#bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-
-#Volume Control in ALG i3
+#Volume Control in i3
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute
 bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute
 bindsym XF86AudioMute exec amixer -q set Master toggle
 
-##Brightness Control in ALG i3
+##Brightness Control in i3
 bindsym XF86MonBrightnessUp exec sudo xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec sudo xbacklight -dec 10
 
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
-
-# The keybindings starting from here till the end of the document are
-# used for navigation in the window manager
+## Keyboard backlight control
+bindsym $mod+Up exec asusctl -n
+bindsym $mod+Down exec asusctl -p
 
 # 1A] change focus
 bindsym $mod+h focus left
@@ -110,29 +51,17 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
-# 1B] alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
 # 2A] move focused window
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
-# 2B] alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
-
 # 3] split in horizontal orientation
-bindsym $mod+Control+h split h
+bindsym $mod+Control+h split v
 
 # 4] split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+v split h
 
 # 5] enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -150,9 +79,6 @@ bindsym $mod+space focus mode_toggle
 
 # 9A] focus the parent container
 bindsym $mod+a focus parent
-
-# 9B] focus the child container
-#bindsym $your_keybinding focus child
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -193,8 +119,10 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # 12A] reload the configuration file
 bindsym $mod+Shift+c reload
+
 # 12B] restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
+
 # 12C] exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
@@ -223,33 +151,8 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
-
 # 13B] Enter Resize Mode
 bindsym $mod+r mode "resize"
-
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available). Commented out due to use of polybar. If you want to
-# use i3 bars (status or blocks) this are some examples on how you can do it.
-# bar {
-        #status_command i3status
-        #tray_output primary
-        #status_command i3status -c ~/.config/i3/i3status.conf
-        #status_command i3blocks -c ~/.config/i3/i3blocks.conf
-#}
-
-
-# Launch a program on a certain workspace, from rofi (which may or may not have a keybinding)
-# for_window [class="nameofapp"] move to workspace $wsno.
-# WS No. 5 has been used as example.
-# Note: You will have to launch the program from a program launcher (rofi).
-for_window [class="firefox"] move to workspace $ws5
-
-# The following way allows programs to be launched with a
-# defined keybinding, on a certain workspace, without
-# touching program launcher. Assign Programs to respective
-# workspaces.
-bindsym $mod+b workspace 5; exec google-chrome-stable
-
 
 #Multi Monitor (Dual Monitor, extended monitor)
 #Replace HDMI2 with DVI-2, VGA-2, DP-2, DVI-2 etc. Get value by typing xrandr in the terminal.
@@ -269,3 +172,28 @@ client.placeholder	#1E222A	#1E222A	#FFFFFF	#98C379		#1E222A
 
 client.background	#1E222A
 
+# -- Autostart ---------------------------------------
+exec_always --no-startup-id	~/.config/i3/bin/autostart.sh
+
+# -- Settings ---------------------------------------
+
+# Windows gap
+gaps inner 10
+
+# Compositor. This helps in transparency and fading.
+exec_always picom -f
+
+# Chrome
+bindsym $mod+b workspace 2; exec google-chrome-stable
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# Wallpaper
+exec_always feh --bg-fill $HOME/.config/i3/wallpapers/redbull-f1.jpg
+
+# Lockscreen
+exec --no-startup-id xss-lock --transfter-sleep-lock -- betterlockscreen -l --nofork
+
+# Network Manager
+# exec --no-startup-id nm-applet
