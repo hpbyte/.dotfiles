@@ -5,12 +5,12 @@
 colors:
   # Default colors
   primary:
-    background: '#1e222a'
-    foreground: '#c8ccd4'
+    background: '#212b30'
+    foreground: '#c4c7c5'
 
   # Normal colors
   normal:
-    black:   '#1e222a'
+    black:   '#212b30'
     red:     '#e06c75'
     green:   '#98c379'
     yellow:  '#e5c07b'
@@ -28,4 +28,4 @@ colors:
     blue:    '#61afef'
     magenta: '#c678dd'
     cyan:    '#56b6c2'
-    white:   '#c8ccd4'
+    white:   '#c4c7c5'
