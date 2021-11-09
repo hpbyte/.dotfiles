@@ -33,13 +33,15 @@ bindsym $mod+z exec --no-startup-id ~/.config/rofi/bin/powermenu
 bindsym $mod+x exec betterlockscreen -l
 
 #Volume Control in i3
-bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute
-bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute
-bindsym XF86AudioMute exec amixer -q set Master toggle
+bindsym XF86AudioRaiseVolume exec pulseaudio-ctl up
+bindsym XF86AudioLowerVolume exec pulseaudio-ctl down
+bindsym XF86AudioMute exec pulseaudio-ctl mute
 
 ##Brightness Control in i3
-bindsym XF86MonBrightnessUp exec sudo xbacklight -inc 10
-bindsym XF86MonBrightnessDown exec sudo xbacklight -dec 10
+# bindsym XF86MonBrightnessUp exec sudo xbacklight -inc 10
+# bindsym XF86MonBrightnessDown exec sudo xbacklight -dec 10
+bindsym $mod+F7 exec xbacklight -dec 10
+bindsym $mod+F8 exec xbacklight -inc 10
 
 ## Keyboard backlight control
 bindsym $mod+Up exec asusctl -n
@@ -164,13 +166,13 @@ exec --no-startup-id xrandr --output HDMI-2 --right-of HDMI-1 --auto
 
 # -- Colors ---------------------------------------
 # class			border	backgr.	text	indicator	child_border
-client.focused		#DA6E89	#DA6E89	#FFFFFF	#98C379		#DA6E89
-client.focused_inactive	#61AFEF	#61AFEF	#1E222A	#98C379		#61AFEF
+client.focused		#4DD0E1FF	#4DD0E1FF	#FFFFFF	#98C379		#4DD0E1FF
+client.focused_inactive	#61AFEF	#61AFEF	#212B30FF	#98C379		#61AFEF
 client.unfocused	#2C3038	#2C3038	#FFFFFF	#98C379		#2C3038
 client.urgent		#C678DD	#C678DD	#FFFFFF	#98C379		#C678DD
-client.placeholder	#1E222A	#1E222A	#FFFFFF	#98C379		#1E222A
+client.placeholder	#212B30FF	#212B30FF	#FFFFFF	#98C379		#212B30FF
 
-client.background	#1E222A
+client.background	#212B30FF
 
 # -- Autostart ---------------------------------------
 exec_always --no-startup-id	~/.config/i3/bin/autostart.sh
