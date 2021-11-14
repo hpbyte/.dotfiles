@@ -4,7 +4,7 @@
 # xsetroot -cursor_name left_ptr
 
 # Powertop
-exec sudo powertop --autotune
+# exec powertop --autotune
 
 # Launch Polybar
 $HOME/.config/polybar/forest/launch.sh
