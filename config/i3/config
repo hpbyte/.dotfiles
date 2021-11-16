@@ -11,7 +11,8 @@ font pango:monospace 0
 # -- Key Bindings ---------------------------------------
 #
 # Terminal
-bindsym $mod+Return exec i3-sensible-terminal
+# bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec --no-startup-id alacritty
 
 # Windows
 #
@@ -172,7 +173,14 @@ bindsym $mod+m move container to output next
 bindsym $mod+Shift+m move workspace to output next
 
 # 15 Ranger
-# bindsym $mod+d exec --no-startup-id ranger
+bindsym $mod+d 			exec --no-startup-id "alacritty --config-file ~/.config/alacritty/alacritty.yml -e ranger"
+
+# 16 Vim
+bindsym $mod+Shift+v 			exec --no-startup-id "alacritty --config-file ~/.config/alacritty/alacritty.yml -e vim"
+bindsym $mod+Shift+n 			exec --no-startup-id "alacritty --config-file ~/.config/alacritty/alacritty.yml -e nvim"
+
+# 17 Htop
+bindsym $mod+Shift+t 			exec --no-startup-id "alacritty --config-file ~/.config/alacritty/alacritty.yml -e htop"
 
 # -- Colors ---------------------------------------
 # class			border	backgr.	text	indicator	child_border
@@ -202,7 +210,7 @@ bindsym $mod+b workspace 2; exec google-chrome-stable
 floating_modifier $mod
 
 # Wallpaper
-exec_always feh --bg-fill $HOME/.config/i3/wallpapers/redbull-f1.jpg
+exec_always feh --bg-fill $HOME/.config/i3/wallpapers/forest.jpg
 
 # Lockscreen
 exec --no-startup-id xss-lock --transfter-sleep-lock -- betterlockscreen -l --nofork
