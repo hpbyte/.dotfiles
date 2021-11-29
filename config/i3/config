@@ -33,12 +33,18 @@ bindsym $mod+z exec --no-startup-id ~/.config/rofi/bin/powermenu
 # can be customized to your liking.
 bindsym $mod+x exec betterlockscreen -l
 
-#Volume Control in i3
+## Volume Control in i3
 bindsym XF86AudioRaiseVolume exec pulseaudio-ctl up
 bindsym XF86AudioLowerVolume exec pulseaudio-ctl down
 bindsym XF86AudioMute exec pulseaudio-ctl mute
 
-##Brightness Control in i3
+## Media Player Controls
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioPause exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+## Brightness Control in i3
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 bindsym $mod+F7 exec xbacklight -dec 10
@@ -182,6 +188,10 @@ bindsym $mod+Shift+n 			exec --no-startup-id "alacritty --config-file ~/.config/
 # 17 Htop
 bindsym $mod+Shift+t 			exec --no-startup-id "alacritty --config-file ~/.config/alacritty/alacritty.yml -e htop"
 
+# 18 Warp
+# bindsym $mod+[ exec --no-startup-id "warp-cli connect"
+# bindsym $mod+] exec --no-startup-id "warp-cli disconnect"
+
 # -- Colors ---------------------------------------
 # class			border	backgr.	text	indicator	child_border
 client.focused		#4DD0E1FF	#4DD0E1FF	#FFFFFF	#98C379		#4DD0E1FF
@@ -210,7 +220,7 @@ bindsym $mod+b workspace 2; exec google-chrome-stable
 floating_modifier $mod
 
 # Wallpaper
-exec_always feh --bg-fill $HOME/.config/i3/wallpapers/forest.jpg
+exec_always feh --bg-fill $HOME/.config/i3/wallpapers/house.jpg
 
 # Lockscreen
 exec --no-startup-id xss-lock --transfter-sleep-lock -- betterlockscreen -l --nofork
