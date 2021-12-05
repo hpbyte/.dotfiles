@@ -208,7 +208,7 @@ exec_always --no-startup-id	~/.config/i3/bin/autostart.sh
 # -- Settings ---------------------------------------
 
 # Windows gap
-gaps inner 10
+gaps inner 5
 
 # Compositor. This helps in transparency and fading.
 exec_always picom -f
@@ -232,3 +232,5 @@ exec --no-startup-id xss-lock --transfter-sleep-lock -- betterlockscreen -l --no
 bindsym Print 					exec --no-startup-id "flameshot gui"
 # bindsym $mod+Print 				exec --no-startup-id "flameshot full -p ~/Pictures/Screenshots/"
 
+# Keyboard language
+exec_always "setxkbmap -model pc105 -layout us,mm -variant ,, -option grp:win_space_toggle"
