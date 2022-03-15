@@ -169,7 +169,7 @@ bindsym $mod+r mode "resize"
 #eDP-X is the display used in Laptops.
 #HDMI-X is display used in Desktop connected to monitor with HDMI Cable.
 #VGA-X is display used in Desktop connected to monitor with VGA Cable.
-exec --no-startup-id xrandr --output HDMI-1 --primary --mode 1920x1080 --left-of eDP-1 --auto
+exec --no-startup-id xrandr --output HDMI-1 --primary --mode 1920x1080 --rotate left --right-of eDP-1 --auto
 
 
 # 14B] move container to and from monitor
