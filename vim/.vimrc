@@ -21,6 +21,7 @@ set incsearch
 set termguicolors
 set scrolloff=8
 set modifiable
+set mouse=a
 
 " Give more space for displaying messages.
 set cmdheight=2
@@ -34,7 +35,7 @@ set shortmess+=c
 
 " Column for line width limit
 set colorcolumn=150
-" highlight ColorColumn ctermbg=0 guibg=lightgrey
+highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 call plug#begin('~/.vim/plugged')
 
@@ -66,6 +67,8 @@ let g:go_highlight_variable_declarations = 1
 let g:go_auto_sameids = 1
 
 colorscheme onedark
+" make bg transparent
+" hi Normal guibg=NONE ctermbg=NONE
 "set background=dark
 
 if executable('rg')

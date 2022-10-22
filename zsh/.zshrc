@@ -71,6 +71,9 @@ eval "$(starship init zsh)"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
+# zsh-z for quick jumps
+plugins=( git zsh-z )
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -99,9 +102,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 export PATH=$PATH:/usr/local/Cellar/mongodb-community/4.2.0/bin
 
@@ -118,3 +120,16 @@ alias love="~/Applications/love.app/Contents/MacOS/love"
 
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+[[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
+
+# jdk
+export JAVA_HOME=$(/usr/libexec/java_home)
+
+# pnpm
+export PNPM_HOME="/Users/htoopyaelwin/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
+
+export LVIM="/Users/htoopyaelwin/.local/bin"
+export PATH="$LVIM:$PATH"
+
