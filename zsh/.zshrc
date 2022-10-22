@@ -118,3 +118,10 @@ alias love="~/Applications/love.app/Contents/MacOS/love"
 
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+
+# Go
+export PATH=$PATH:/usr/local/go/bin
+
+# lunarvim
+export LVIM="/home/htoopyae/.local/bin/"
+export PATH="$LVIM:$PATH"
