@@ -10,6 +10,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # ZSH_THEME="robbyrussell"
 eval "$(starship init zsh)"
+#eval "$(cd ~/Opensource/starship && cargo +nightly run init zsh)"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -118,6 +119,8 @@ export GOPATH=$HOME/go
 # alias for love2d
 alias love="~/Applications/love.app/Contents/MacOS/love"
 
+alias v="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs -o vim"
+
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
@@ -127,3 +130,6 @@ export PATH=$PATH:/usr/local/go/bin
 # lunarvim
 export LVIM="/home/htoopyae/.local/bin/"
 export PATH="$LVIM:$PATH"
+
+# textlive
+export PATH=$PATH:/usr/local/texlive/2023/bin/x86_64-linux

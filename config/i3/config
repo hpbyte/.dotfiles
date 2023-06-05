@@ -169,9 +169,8 @@ bindsym $mod+r mode "resize"
 #eDP-X is the display used in Laptops.
 #HDMI-X is display used in Desktop connected to monitor with HDMI Cable.
 #VGA-X is display used in Desktop connected to monitor with VGA Cable.
-#exec --no-startup-id xrandr --output HDMI-1 --mode 1920x1080 --rotate left --right-of eDP-1 --auto
-exec --no-startup-id xrandr --output HDMI-1 --mode 1920x1080 --left-of eDP-1 --auto
-
+#exec --no-startup-id xrandr --output HDMI-1 --mode 3840x2160 --rotate left --left-of eDP-1 --auto
+exec --no-startup-id xrandr --output HDMI-1 --left-of eDP-1 --auto
 
 # 14B] move container to and from monitor
 bindsym $mod+m move container to output next
@@ -221,7 +220,7 @@ bindsym $mod+b workspace 2; exec google-chrome-stable
 floating_modifier $mod
 
 # Wallpaper
-exec_always feh --bg-fill $HOME/.config/i3/wallpapers/unsplash-5.jpg
+exec_always feh --bg-fill $HOME/.config/i3/wallpapers/unsplash-3.jpg
 
 # Lockscreen
 exec --no-startup-id xss-lock --transfter-sleep-lock -- betterlockscreen -l --nofork
