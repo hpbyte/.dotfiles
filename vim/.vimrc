@@ -22,6 +22,7 @@ set termguicolors
 set scrolloff=8
 set modifiable
 set mouse=a
+set clipboard=unnamed
 
 " Give more space for displaying messages.
 set cmdheight=2
@@ -47,6 +48,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'preservim/nerdcommenter'
+Plug 'wuelnerdotexe/vim-astro'
 
 call plug#end()
 
@@ -65,6 +67,9 @@ let g:go_highlight_generate_tags = 1
 let g:go_highlight_format_strings = 1
 let g:go_highlight_variable_declarations = 1
 let g:go_auto_sameids = 1
+
+" astro
+let g:astro_typescript = 'enable'
 
 colorscheme onedark
 " make bg transparent
