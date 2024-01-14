@@ -133,3 +133,6 @@ export PATH="$LVIM:$PATH"
 
 # textlive
 export PATH=$PATH:/usr/local/texlive/2023/bin/x86_64-linux
+
+# air
+alias air="$GOPATH/bin/air"

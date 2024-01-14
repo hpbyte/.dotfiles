@@ -179,14 +179,14 @@ bindsym $mod+m move container to output next
 bindsym $mod+Shift+m move workspace to output next
 
 # 15 Ranger
-bindsym $mod+d 			exec --no-startup-id "alacritty --config-file ~/.config/alacritty/alacritty.yml -e ranger"
+bindsym $mod+d 			exec --no-startup-id "alacritty --config-file ~/.config/alacritty/alacritty.toml -e ranger"
 
 # 16 Vim
-bindsym $mod+Shift+v 			exec --no-startup-id "alacritty --config-file ~/.config/alacritty/alacritty.yml -e vim"
-bindsym $mod+Shift+n 			exec --no-startup-id "alacritty --config-file ~/.config/alacritty/alacritty.yml -e nvim"
+bindsym $mod+Shift+v 			exec --no-startup-id "alacritty --config-file ~/.config/alacritty/alacritty.toml -e vim"
+bindsym $mod+Shift+n 			exec --no-startup-id "alacritty --config-file ~/.config/alacritty/alacritty.toml -e nvim"
 
 # 17 Htop
-bindsym $mod+Shift+t 			exec --no-startup-id "alacritty --config-file ~/.config/alacritty/alacritty.yml -e htop"
+bindsym $mod+Shift+t 			exec --no-startup-id "alacritty --config-file ~/.config/alacritty/alacritty.toml -e htop"
 
 # 18 Warp
 # bindsym $mod+[ exec --no-startup-id "warp-cli connect"
