@@ -4,6 +4,17 @@
 [alias]
 	st = status
 	co = checkout
+  br = branch
+	ci = commit
 	hist = log --pretty=oneline --graph --decorate
+  br-ls = show-branch --all
+	diff = diff --color-words
+	pu = pull origin
+	ph = push origin
+	a = add
+	aa = add .
+	unstage = reset HEAD
+	amend = commit --amend
+	undo = reset --soft HEAD^
 [init]
 	defaultBranch = main
