@@ -142,8 +142,5 @@ export NODE_AUTH_TOKEN=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
 # taskworld homebrew
 export HOMEBREW_GITHUB_API_TOKEN=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
 
-# datadog
-export DD_API_KEY=c22a7ff3e9328d6194020b97d803fa9b
-
 # air
 alias air="$GOPATH/bin/air"
