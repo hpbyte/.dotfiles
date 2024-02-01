@@ -138,6 +138,7 @@ export PATH="$LVIM:$PATH"
 
 # taskworld node auth token
 export NODE_AUTH_TOKEN=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
+#export NODE_AUTH_TOKEN=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
 
 # taskworld homebrew
 export HOMEBREW_GITHUB_API_TOKEN=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
