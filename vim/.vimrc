@@ -21,6 +21,8 @@ set incsearch
 set termguicolors
 set scrolloff=8
 set modifiable
+set mouse=a
+set clipboard=unnamed
 
 " Give more space for displaying messages.
 set cmdheight=2
@@ -34,7 +36,7 @@ set shortmess+=c
 
 " Column for line width limit
 set colorcolumn=150
-" highlight ColorColumn ctermbg=0 guibg=lightgrey
+highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 call plug#begin('~/.vim/plugged')
 
@@ -46,7 +48,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'preservim/nerdcommenter'
-Plug 'morhetz/gruvbox'
+Plug 'wuelnerdotexe/vim-astro'
 
 call plug#end()
 
@@ -66,8 +68,14 @@ let g:go_highlight_format_strings = 1
 let g:go_highlight_variable_declarations = 1
 let g:go_auto_sameids = 1
 
+" astro
+let g:astro_typescript = 'enable'
+
 colorscheme onedark
 set background=dark
+" make bg transparent
+" hi Normal guibg=NONE ctermbg=NONE
+"set background=dark
 
 if executable('rg')
     let g:rg_derive_root='true'
