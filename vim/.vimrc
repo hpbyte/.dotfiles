@@ -46,6 +46,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'preservim/nerdcommenter'
+Plug 'morhetz/gruvbox'
 
 call plug#end()
 
@@ -66,7 +67,7 @@ let g:go_highlight_variable_declarations = 1
 let g:go_auto_sameids = 1
 
 colorscheme onedark
-"set background=dark
+set background=dark
 
 if executable('rg')
     let g:rg_derive_root='true'
