@@ -1,13 +1,18 @@
 #!/usr/bin/env zsh
 
-STOW_FOLDERS="gitconfig,tmux,vim,zsh"
+STOW_FOLDERS="gitconfig,tmux,vim,zsh,kitty"
 
 DOT_FILES=$HOME/.dotfiles
 
 pushd $DOT_FILES
 for folder in $(echo $STOW_FOLDERS | sed "s/,/ /g")
 do
-    echo "Removing $folder"
-    stow -D $folder
+    if [[ $folder == "kitty" ]]; then
+        echo "Removing $folder from $HOME/.config/kitty"
+        stow -D -t $HOME/.config/kitty $folder
+    else
+        echo "Removing $folder from $HOME"
+        stow -D $folder
+    fi
 done
 popd
