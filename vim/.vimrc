@@ -167,6 +167,17 @@ fun! TrimWhitespace()
     call winrestview(l:save)
 endfun
 
+" Show type on hover
+nnoremap <silent> T :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
 autocmd BufWritePre * :call TrimWhitespace()
 
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.

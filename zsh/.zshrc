@@ -126,22 +126,28 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 [[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
 
 # jdk
-export JAVA_HOME=$(/usr/libexec/java_home)
+# export JAVA_HOME=$(/usr/libexec/java_home)
+export JAVA_HOME="/Users/htoopyaelwin/.sdkman/candidates/java/17.0.4.1-tem"
 
 # pnpm
-export PNPM_HOME="/Users/htoopyaelwin/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
+# export PNPM_HOME="/Users/htoopyaelwin/Library/pnpm"
+# export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
 export LVIM="/Users/htoopyaelwin/.local/bin"
 export PATH="$LVIM:$PATH"
 
 # taskworld node auth token
-export NODE_AUTH_TOKEN=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
+#export NODE_AUTH_TOKEN=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
 #export NODE_AUTH_TOKEN=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
+export NODE_AUTH_TOKEN=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
 
 # taskworld homebrew
 export HOMEBREW_GITHUB_API_TOKEN=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
 
 # air
 alias air="$GOPATH/bin/air"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
