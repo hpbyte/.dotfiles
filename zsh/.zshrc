@@ -125,20 +125,20 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 [[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
 
 # jdk
-export JAVA_HOME="/Users/htoopyaelwin/.sdkman/candidates/java/17.0.4.1-tem"
+export JAVA_HOME="$HOME/.sdkman/candidates/java/17.0.4.1-tem"
 
 # pnpm
-# export PNPM_HOME="/Users/htoopyaelwin/Library/pnpm"
+# export PNPM_HOME="$HOME/Library/pnpm"
 # export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
-export LVIM="/Users/htoopyaelwin/.local/bin"
+export LVIM="$HOME/.local/bin"
 export PATH="$LVIM:$PATH"
 
 # air
 alias air="$GOPATH/bin/air"
 
-export STARSHIP_CONFIG="/Users/htoopyaelwin/.config/starship/starship.toml"
+export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 
 # fnm
 eval "$(fnm env --use-on-cd --shell zsh)"
