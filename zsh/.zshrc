@@ -117,6 +117,7 @@ export GOPATH=$HOME/go
 # alias for love2d
 alias love="~/Applications/love.app/Contents/MacOS/love"
 
+# search file and open in vim
 alias v="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs -o vim"
 
 export VOLTA_HOME="$HOME/.volta"
@@ -124,7 +125,6 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 [[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
 
 # jdk
-# export JAVA_HOME=$(/usr/libexec/java_home)
 export JAVA_HOME="/Users/htoopyaelwin/.sdkman/candidates/java/17.0.4.1-tem"
 
 # pnpm
@@ -135,22 +135,19 @@ export JAVA_HOME="/Users/htoopyaelwin/.sdkman/candidates/java/17.0.4.1-tem"
 export LVIM="/Users/htoopyaelwin/.local/bin"
 export PATH="$LVIM:$PATH"
 
-# taskworld node auth token
-#export NODE_AUTH_TOKEN=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
-#export NODE_AUTH_TOKEN=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
-export NODE_AUTH_TOKEN=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
-
-# taskworld homebrew
-export HOMEBREW_GITHUB_API_TOKEN=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
-
 # air
 alias air="$GOPATH/bin/air"
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 export STARSHIP_CONFIG="/Users/htoopyaelwin/.config/starship/starship.toml"
 
 # fnm
 eval "$(fnm env --use-on-cd --shell zsh)"
+
+# secrets
+op inject --in-file "${HOME}/.dotfiles/zsh/secrets.zsh" | while read -r line; do
+  eval "$line"
+done
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
