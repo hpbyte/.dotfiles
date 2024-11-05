@@ -1,18 +1,27 @@
 #!/usr/bin/env zsh
 
-STOW_FOLDERS="gitconfig,tmux,vim,zsh,kitty"
+# Folders that should be removed from ~/.config
+CONFIG_FOLDERS="kitty starship"
+
+# Folders that should be removed from home directory
+HOME_FOLDERS="gitconfig tmux vim zsh"
 
 DOT_FILES=$HOME/.dotfiles
 
 pushd $DOT_FILES
-for folder in $(echo $STOW_FOLDERS | sed "s/,/ /g")
+
+# Remove symlinks for ~/.config folders
+for folder in $(echo $CONFIG_FOLDERS | sed "s/,/ /g")
 do
-    if [[ $folder == "kitty" ]]; then
-        echo "Removing $folder from $HOME/.config/kitty"
-        stow -D -t $HOME/.config/kitty $folder
-    else
-        echo "Removing $folder from $HOME"
-        stow -D $folder
-    fi
+    echo "Removing $folder from $HOME/.config/$folder"
+    stow -D -t $HOME/.config/$folder $folder
 done
+
+# Remove symlinks for home directory folders
+for folder in $(echo $HOME_FOLDERS | sed "s/,/ /g")
+do
+    echo "Removing $folder from $HOME"
+    stow -D -t $HOME $folder
+done
+
 popd
