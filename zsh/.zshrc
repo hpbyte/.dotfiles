@@ -70,10 +70,8 @@ eval "$(starship init zsh)"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
-
 # zsh-z for quick jumps
-plugins=( git zsh-z )
+plugins=( git z )
 
 source $ZSH/oh-my-zsh.sh
 
@@ -153,3 +151,6 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 export STARSHIP_CONFIG="/Users/htoopyaelwin/.config/starship/starship.toml"
+
+# fnm
+eval "$(fnm env --use-on-cd --shell zsh)"
