@@ -24,6 +24,7 @@ set scrolloff=8
 set modifiable
 set mouse=a
 set clipboard=unnamed
+" set foldmethod=indent " fold based on indent
 
 " Give more space for displaying messages.
 set cmdheight=2
@@ -50,6 +51,7 @@ Plug 'joshdick/onedark.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'preservim/nerdcommenter'
 Plug 'wuelnerdotexe/vim-astro'
+Plug 'ggml-org/llama.vim'
 
 call plug#end()
 
@@ -72,10 +74,11 @@ let g:go_auto_sameids = 1
 " astro
 let g:astro_typescript = 'enable'
 
+set background=dark
 colorscheme onedark
+
 " make bg transparent
 " hi Normal guibg=NONE ctermbg=NONE
-"set background=dark
 
 if executable('rg')
     let g:rg_derive_root='true'
