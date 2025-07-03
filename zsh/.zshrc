@@ -112,7 +112,7 @@ export PATH="$PATH:$HOME/flutter/flutter/bin"
 export PATH="$PATH:$HOME/Applications/SonarQube/bin"
 export PATH="$PATH:$HOME/Applications/SonarScanner/bin"
 
-export GOPATH=$HOME/go
+export PATH="$PATH:/usr/local/go/bin"
 
 # alias for love2d
 alias love="~/Applications/love.app/Contents/MacOS/love"
@@ -151,3 +151,19 @@ done
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+export PATH="$PATH:$HOME/.docker/bin"
+
+export PATH="$(which python3.11)/libexec/bin:$PATH"
+
+source "${HOME}/.dotfiles/zsh/aliases.zsh"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/htoopyaelwin/.lmstudio/bin"
+
+# bun completions
+[ -s "/Users/htoopyaelwin/.bun/_bun" ] && source "/Users/htoopyaelwin/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
