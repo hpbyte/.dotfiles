@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 # Folders that should be removed from ~/.config
-CONFIG_FOLDERS="kitty starship"
+CONFIG_FOLDERS="ghostty kitty starship"
 
 # Folders that should be removed from home directory
 HOME_FOLDERS="gitconfig tmux vim zsh"

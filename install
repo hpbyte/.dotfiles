@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 # Folders that should link to ~/.config
-CONFIG_FOLDERS="kitty starship"
+CONFIG_FOLDERS="ghostty kitty starship"
 
 # Folders that should link directly to home directory
 HOME_FOLDERS="gitconfig tmux vim zsh"
